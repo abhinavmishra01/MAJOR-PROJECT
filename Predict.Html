@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    
+    body{
+        
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    
+    .card-img-top{
+        object-fit: cover;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row my-5">
+        
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/{{doc.path}}" alt="">
+                <div class="card-body p-1">
+                    <a   data-toggle="modal"  class="nav justify-content-center">Uploaded doc</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h1 class="display-2" >{{session.last_prediction}} </h1>
+            <p class="lead">Confidence {{confidence}}</p>
+            {{fig|safe}}
+        </div>    
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<style>
+    
+</style>
+{% endblock %}

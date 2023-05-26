@@ -1,0 +1,23 @@
+<div class="modal fade" id="uploadModal" aria-hidden="true" aria-labelledby="uploadModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Upload Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/upload/document/image" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                      <label for="file" class="form-label">Choose a document image</label>
+                      <input type="file" class="form-control" name="file" id="file" placeholder="Select valid image" aria-describedby="fileHelpId">
+                      <div id="fileHelpId" class="form-text">Invalid Image will give incorrect answers, please check what image is uploaded</div>
+                    </div>
+                   <div class="d-grid gap-2">
+                     <button class="btn btn-success">Continue</button>
+                   </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

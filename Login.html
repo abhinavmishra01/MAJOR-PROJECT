@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body{
+            background-color:rgb(20, 95, 95);
+            background-image: url('/static/images/register_page_hero.svg');
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+<div class="nav justify-content-center"style="margin-left:22rem;">
+    <div class="container vh-100 " >
+        <div class="row">
+            <div class="col-sm-12 col-md-7" style="margin-top: 4rem;">
+              
+                <div class="card shadow-lg m-4 " >
+                    <div class="card-header">
+                        <div class="card-title"><h2>Register your account</h2></div>
+                    </div>
+                    <form method="POST" class="p-6">
+                        <div class="form-group">
+                          <label for="name">Your Name</label>
+                          <input type="text"
+                            class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
+                          <small id="helpId" class="form-text text-muted">Fill in the full name</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="email"
+                            class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="john@gamil.com">
+                          <small id="emailHelp" class="form-text text-muted">Enter a valid email address</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="password">Password</label>
+                          <input type="password"
+                            class="form-control" name="password" id="password" aria-describedby="passhelpId" placeholder="min 6 chars">
+                          <small id="passhelpId" class="form-text text-muted">enter a good password</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="cpassword">Confirm Password</label>
+                          <input type="password"
+                            class="form-control" name="cpassword" id="cpassword" aria-describedby="cpasshelpId" placeholder="enter password again">
+                          <small id="cpasshelpId" class="form-text text-muted">Enter a good password</small>
+                        </div>
+                        <button class="btn btn-success btn-block">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+{% endblock %}
+{% block js %}
+<script>
+      $(function () {
+          anime({
+          targets: '.card',
+          scale: [.9,1],
+          delay: 500
+        });
+      });
+</script>
+{% endblock %}

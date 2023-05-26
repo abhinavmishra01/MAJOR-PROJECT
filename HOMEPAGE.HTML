@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    .card-img-top{
+        height: 200px;
+        object-fit: cover;
+        }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-12 mx-auto">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/static/images/upload.jpg" alt="">
+                            <div class="card-body p-1">
+                                <a href="#"  data-toggle="modal" data-target="#uploadModal" class="btn btn-success btn-sm btn-block">Upload</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% for doc in docs %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/{{doc.path}}" alt="">
+                            <div class="card-body p-1">
+                                <a href="/predict/{{doc.id}}/doc" class="btn btn-primary btn-sm btn-block">Analyse</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<style>
+    
+</style>
+{% endblock %}
